@@ -1,11 +1,12 @@
 const plantDetails = {
-    name: 'coca plant',
-    imageUrl: 'images/header.svg',
+    name: 'cannabis',
     growth: 25,
     water: 10,
     rate: 30,
     nutrients: 34
 }
+// coca, cannabis, poppy
+// plant name linked to the image src
 const pushDetails = (plant) => {
     const {growth, rate, nutrients, water, name, imageUrl} = plant
     document.querySelector('.growth').innerHTML = growth + '%';
@@ -16,9 +17,9 @@ const pushDetails = (plant) => {
     document.querySelector('.rate-range').style.width = `${rate}%`
     document.querySelector('.nutrients').innerHTML = nutrients + '%';
     document.querySelector('.nutrients-range').style.width = `${nutrients}%`;
-    document.querySelector('.plantname').innerHTML = name;
+    document.querySelector('.plantname').innerHTML = name + ' plant';
     document.querySelectorAll('.plant-picture').forEach((elem) => {
-        elem.src = imageUrl;
+        elem.src = `images/${name}.svg`;
     })
 }
 pushDetails(plantDetails)
